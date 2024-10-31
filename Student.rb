@@ -67,7 +67,7 @@ Student.get_students_by_age(23).each do |student|
   puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}"
 end
 
-puts "\nСтуденти з віком 26 роки:"
+puts "\nСтуденти з віком 26 років:"
 Student.get_students_by_age(26).each do |student|
   puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}"
 end
