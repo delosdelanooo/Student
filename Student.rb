@@ -52,6 +52,37 @@ student1 = Student.new("Мельник", "Iван", "2000-05-15")
 student2 = Student.new("Абраменко", "Петро", "1998-10-22")
 student3 = Student.new("Ткаченко", "Марiя", "2001-01-12")
 
+puts "Список усіх студентів:"
 Student.all_students.each do |student|
-  puts "Список усіх студентів:#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}, Вік: #{student.calculate_age}"
+  puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}, Вік: #{student.calculate_age}"
+end
+
+puts "\nСтуденти з віком 24 роки:"
+Student.get_students_by_age(24).each do |student|
+  puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}"
+end
+
+puts "\nСтуденти з віком 23 роки:"
+Student.get_students_by_age(23).each do |student|
+  puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}"
+end
+
+puts "\nСтуденти з віком 26 роки:"
+Student.get_students_by_age(26).each do |student|
+  puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}"
+end
+
+puts "\nСтуденти з ім'ям Марiя:"
+Student.get_students_by_name("Марiя").each do |student|
+  puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}"
+end
+
+puts "\nСтуденти з ім'ям Петро:"
+Student.get_students_by_name("Петро").each do |student|
+  puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}"
+end
+
+puts "\nСтуденти з ім'ям Iван:"
+Student.get_students_by_name("Iван").each do |student|
+  puts "#{student.surname} #{student.name}, Дата народження: #{student.date_of_birth}"
 end
