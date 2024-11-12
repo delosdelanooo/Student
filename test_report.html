@@ -1,0 +1,55 @@
+html_report_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report for Student Class</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; }
+        h1 { text-align: center; }
+        .test { padding: 10px; border: 1px solid #ddd; margin: 10px 0; border-radius: 5px; }
+        .pass { background-color: #e6ffed; color: #2a7d2a; }
+        .fail { background-color: #ffe6e6; color: #b30000; }
+        .test-name { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Test Report for Student Class</h1>
+    <div class="test pass">
+        <p class="test-name">test_initialization</p>
+        <p>Initialization of Student object with valid data - <strong>Passed</strong></p>
+    </div>
+    <div class="test pass">
+        <p class="test-name">test_calculate_age</p>
+        <p>Age calculation based on date of birth - <strong>Passed</strong></p>
+    </div>
+    <div class="test pass">
+        <p class="test-name">test_get_students_by_age</p>
+        <p>Fetching students by specific age - <strong>Passed</strong></p>
+    </div>
+    <div class="test pass">
+        <p class="test-name">test_get_students_by_name</p>
+        <p>Fetching students by name - <strong>Passed</strong></p>
+    </div>
+    <div class="test pass">
+        <p class="test-name">test_add_student</p>
+        <p>Adding a new student to the list - <strong>Passed</strong></p>
+    </div>
+    <div class="test pass">
+        <p class="test-name">test_remove_student</p>
+        <p>Removing a student from the list - <strong>Passed</strong></p>
+    </div>
+    <div class="test fail">
+        <p class="test-name">test_invalid_date_of_birth</p>
+        <p>Handling of invalid future date for date of birth - <strong>Failed</strong></p>
+        <p>Error: ArgumentError - Date of birth cannot be in the future</p>
+    </div>
+</body>
+</html>
+"""
+file_path = "/mnt/data/test_report.html"
+with open(file_path, "w") as file:
+    file.write(html_report_content)
+
+file_path
