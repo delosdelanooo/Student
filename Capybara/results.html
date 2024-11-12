@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RSpec Results</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      font-size: 80%;
+    }
+    #rspec-header {
+      background: #65C400; color: #fff; height: 4em;
+    }
+    .rspec-report h1 {
+      margin: 0px 10px 0px 10px;
+      padding: 10px;
+      font-family: "Lucida Grande", Helvetica, sans-serif;
+      font-size: 1.8em;
+      position: absolute;
+    }
+    #label {
+      float:left;
+    }
+    #display-filters {
+      float:left;
+      padding: 28px 0 0 40%;
+      font-family: "Lucida Grande", Helvetica, sans-serif;
+    }
+    #summary {
+      float:right;
+      padding: 5px 10px;
+      font-family: "Lucida Grande", Helvetica, sans-serif;
+      text-align: right;
+    }
+    #summary p {
+      margin: 0 0 0 2px;
+    }
+    #summary #totals {
+      font-size: 1.2em;
+    }
+    .example_group {
+      margin: 0 10px 5px;
+      background: #fff;
+    }
+    dl {
+      margin: 0; padding: 0 0 5px;
+      font: normal 11px "Lucida Grande", Helvetica, sans-serif;
+    }
+    dt {
+      padding: 3px;
+      background: #65C400;
+      color: #fff;
+      font-weight: bold;
+    }
+    dd {
+      margin: 5px 0 5px 5px;
+      padding: 3px 3px 3px 18px;
+    }
+    dd .duration {
+      padding-left: 5px;
+      text-align: right;
+      right: 0px;
+      float:right;
+    }
+    dd.example.passed {
+      border-left: 5px solid #65C400;
+      border-bottom: 1px solid #65C400;
+      background: #DBFFB4; color: #3D7700;
+    }
+    dd.example.failed {
+      border-left: 5px solid #C20000;
+      border-bottom: 1px solid #C20000;
+      color: #C20000; background: #FFFBD3;
+    }
+    #rspec-header.failed {
+      color: #FFFFFF; background: #C40D0D;
+    }
+    .backtrace {
+      color: #000;
+      font-size: 12px;
+    }
+    a {
+      color: #BE5C00;
+    }
+  </style>
+  <script type="text/javascript">
+    function addClass(element_id, classname) {
+      document.getElementById(element_id).className += (" " + classname);
+    }
+
+    function removeClass(element_id, classname) {
+      var elem = document.getElementById(element_id);
+      var classlist = elem.className.replace(classname,'');
+      elem.className = classlist;
+    }
+
+    function moveProgressBar(percentDone) {
+      document.getElementById("rspec-header").style.width = percentDone +"%";
+    }
+
+    function makeRed(element_id) {
+      removeClass(element_id, 'passed');
+      addClass(element_id,'failed');
+    }
+
+    function apply_filters() {
+      var passed_filter = document.getElementById('passed_checkbox').checked;
+      var failed_filter = document.getElementById('failed_checkbox').checked;
+      var pending_filter = document.getElementById('pending_checkbox').checked;
+
+      assign_display_style("example passed", passed_filter);
+      assign_display_style("example failed", failed_filter);
+      assign_display_style("example not_implemented", pending_filter);
+
+      assign_display_style_for_group("example_group passed", passed_filter);
+      assign_display_style_for_group("example_group failed", failed_filter);
+    }
+
+    function get_display_style(display_flag) {
+      var style_mode = 'none';
+      if (display_flag == true) {
+        style_mode = 'block';
+      }
+      return style_mode;
+    }
+
+    function assign_display_style(classname, display_flag) {
+      var style_mode = get_display_style(display_flag);
+      var elems = document.getElementsByClassName(classname)
+      for (var i=0; i<elems.length;i++) {
+        elems[i].style.display = style_mode;
+      }
+    }
+
+    function assign_display_style_for_group(classname, display_flag) {
+      var display_style_mode = get_display_style(display_flag);
+      var elems = document.getElementsByClassName(classname)
+      for (var i=0; i<elems.length;i++) {
+        elems[i].style.display = display_style_mode;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="rspec-report">
+    <div id="rspec-header">
+      <div id="label">
+        <h1>RSpec Code Examples</h1>
+      </div>
+      <div id="display-filters">
+        <input id="passed_checkbox" name="passed_checkbox" type="checkbox" checked="checked" onchange="apply_filters()" value="1" /> <label for="passed_checkbox">Passed</label>
+        <input id="failed_checkbox" name="failed_checkbox" type="checkbox" checked="checked" onchange="apply_filters()" value="2" /> <label for="failed_checkbox">Failed</label>
+      </div>
+      <div id="summary">
+        <p id="totals"></p>
+        <p id="duration"></p>
+      </div>
+    </div>
+
+    <div class="results">
+      <div id="div_group_1" class="example_group passed">
+        <dl style="margin-left: 0px;">
+          <dt id="example_group_1" class="passed">Login Tests</dt>
+        </dl>
+      </div>
+      <div id="div_group_2" class="example_group passed">
+        <dl style="margin-left: 15px;">
+          <dt id="example_group_2" class="passed">Login to account and add item to cart</dt>
+          <script type="text/javascript">moveProgressBar('33.3');</script>
+          <dd class="example passed"><span class="passed_spec_name">user:standard_user logs in and adds items to cart</span><span class='duration'>8.76438s</span></dd>
+          <script type="text/javascript">moveProgressBar('66.6');</script>
+          <dd class="example failed"><span class="failed_spec_name">user:error_user attempts to log in and add items to cart</span><span class='duration'>7.76985s</span></dd>
+          <script type="text/javascript">moveProgressBar('100.0');</script>
+          <dd class="example failed"><span class="failed_spec_name">user:locked_out_user attempts to log in and add items to cart</span><span class='duration'>7.99033s</span></dd>
+        </dl>
+      </div>
+
+      <script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>24.53005 seconds</strong>";</script>
+      <script type="text/javascript">document.getElementById('totals').innerHTML = "3 examples, 2 failures";</script>
+    </div>
+  </div>
+</body>
+</html>
